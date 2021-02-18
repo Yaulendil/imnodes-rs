@@ -51,7 +51,7 @@ impl ScopeNone {
     /// selected_nodes builds on top of this
     pub fn num_selected_nodes(&self) -> u32 {
         let num = unsafe { sys::imnodes_NumSelectedNodes() };
-        assert!(num > 0);
+        assert!(num >= 0);
         num as u32
     }
 
@@ -59,7 +59,7 @@ impl ScopeNone {
     /// selected_links builds on top of this
     pub fn num_selected_links(&self) -> u32 {
         let num = unsafe { sys::imnodes_NumSelectedLinks() };
-        assert!(num > 0);
+        assert!(num >= 0);
         num as u32
     }
 
